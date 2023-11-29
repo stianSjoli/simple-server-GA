@@ -17,6 +17,6 @@ jobs:
       - name: Build image
         run: docker build . -t pasient0/simple-server:latest
       - name: Sign the published Docker image
-        run: cosign sign --key ${{ secrets.PUBLIC_KEY_MAIN }} pasient0/simple-server:latest
+        run: cosign sign --key ${{ secrets.PRIVATE_KEY_MAIN }} pasient0/simple-server:latest
       - name: push image
         run: docker push pasient0/simple-server:latest 
