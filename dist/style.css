@@ -1,0 +1,58 @@
+#page {
+    border-color: black;
+    border-width: 0.1em;
+    border-style:solid;
+    height:300vh;
+    max-width:60vw;
+    margin: auto;
+    box-shadow: 2px 2px #35824E; 
+}
+h1 {
+    position: relative;
+    left: 40%;
+}
+figure {
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+}
+.card-donut {
+    background-color: #F2F2F2;
+    max-width: 30vw;
+    margin: auto;
+    min-height: 15vw;    
+}
+.legend text {
+  font-size: 5px;
+}
+.card-histogram {
+  background-color: #F2F2F2;
+  max-width: 40vw;
+  margin: auto;
+  min-height: 30vw;
+}
+.fig-text {
+  padding: 1em;
+  font-size: 1em;
+}
+.y-axis text{
+  font-size: 18px;
+  transform: translateY(2px);
+  text-anchor:end;
+}
+.x-axis text{
+  font-size: 18px;
+  transform: translateX(0px);
+  text-anchor:middle;
+  dy:5;
+}
+rect.bin{
+  fill:#bb1b18;
+  stroke:black;
+}
+svg {
+  background-color: #F2F2F2; 
+}
+p.figure-legend{
+  margin:auto;
+}
