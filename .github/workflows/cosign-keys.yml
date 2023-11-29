@@ -1,31 +1,16 @@
 name: Docker Image CI
 
 on:
-  push:
-    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
-  build:
+  create_key_pair:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Login to Docker Hub
-        uses: docker/login-action@v2
-        with:
-          username: pasient0
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build image
-        run: docker build . -t pasient0/simple-server:latest
       - name: cosign-installer
         uses: sigstore/cosign-installer@v2.0.0
       - name: Write signing key to disk
         run: 'echo "$KEY" > cosign.key'
         shell: bash
         env:
-          KEY: ${{ secrets.COSIGN_KEY }}
-      - name: Sign the published Docker image
-        env:
-          COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}
-        run: cosign sign --key cosign.key pasient0/simple-server:latest
-      - name: push image
-        run: docker push pasient0/simple-server:latest 
+          KEY: ${{ secrets.PRIVATE_KEY_MAIN }} 
