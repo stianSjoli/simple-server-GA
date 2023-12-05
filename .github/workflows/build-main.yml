@@ -26,4 +26,4 @@ jobs:
       - name: Sign the published Docker image
         run: cosign sign --key cosign.key pasient0/simple-server@$(docker images --no-trunc --quiet pasient0/simple-server) -y
       - name: push image
-        run: docker push pasient0/simple-server@$(docker images --no-trunc --quiet pasient0/simple-server)
+        run: docker push pasient0/simple-server
