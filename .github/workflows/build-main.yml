@@ -15,7 +15,7 @@ jobs:
           username: pasient0
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build image
-        run: docker build . -t pasient0/simple-server
+        run: docker build . -t pasient0/simple-server:signed
       - uses: sigstore/cosign-installer@main
       - name: Write signing key to disk
         run: 'echo "$KEY" > cosign.key'
@@ -23,8 +23,6 @@ jobs:
         env:
           KEY: ${{ secrets.PRIVATE_KEY_MAIN }}
       - name: Sign the published Docker image
-        run: |
-          docker tag signed pasient0/simple-server
-          cosign sign --key cosign.key pasient0/simple-server@$(docker images --no-trunc --quiet pasient0/simple-server) -y
+        run: cosign sign --key cosign.key pasient0/simple-server@$(docker images --no-trunc --quiet pasient0/simple-server) -y
       - name: push image
         run: docker push pasient0/simple-server:signed
