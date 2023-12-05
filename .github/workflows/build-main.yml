@@ -22,8 +22,9 @@ jobs:
         shell: bash
         env:
           KEY: ${{ secrets.PRIVATE_KEY_MAIN }}
-        
       - name: Sign the published Docker image
-        run: cosign sign --key cosign.key pasient0/simple-server@$(docker images --no-trunc --quiet pasient0/simple-server) -y
+        run: |
+          cosign sign --key cosign.key pasient0/simple-server@$(docker images --no-trunc --quiet pasient0/simple-server) -y
+          docker pasient0/simple-server@$(docker images --no-trunc --quiet pasient0/simple-server) -t pasient0/simple-server:signed 
       - name: push image
-        run: docker push pasient0/simple-server
+        run: docker push pasient0/simple-server:signed
