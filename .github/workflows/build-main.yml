@@ -24,10 +24,10 @@ jobs:
           KEY: ${{ secrets.PRIVATE_KEY_MAIN }}
         
       - name: Sign the published Docker image
-        run: cosign sign --key cosign.key pasient0/simple-server@"$SHA256" -y
-        env:
-          SHA256: $(docker images --no-trunc --quiet pasient0/simple-server)
+        run: |
+          SHA256 = $(docker images --no-trunc --quiet pasient0/simple-server)
+          cosign sign --key cosign.key pasient0/simple-server@"$SHA256" -y
       - name: push image
-        run: docker push pasient0/simple-server@"$SHA256" 
-        env:
-          SHA256: $(docker images --no-trunc --quiet pasient0/simple-server)
+        run: |
+          SHA256 = $(docker images --no-trunc --quiet pasient0/simple-server)
+          docker push pasient0/simple-server@"$SHA256" 
