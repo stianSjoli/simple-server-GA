@@ -24,7 +24,7 @@ jobs:
           KEY: ${{ secrets.PRIVATE_KEY_MAIN }}
       - name: Sign the published Docker image
         run: |
+          docker tag signed pasient0/simple-server
           cosign sign --key cosign.key pasient0/simple-server@$(docker images --no-trunc --quiet pasient0/simple-server) -y
-          docker tag signed pasient0/simple-server@$(docker images --no-trunc --quiet pasient0/simple-server)
       - name: push image
         run: docker push pasient0/simple-server:signed
