@@ -5,9 +5,10 @@ services:
       - "8000:5000"
   scan:
     image: "public.ecr.aws/portswigger/dastardly:latest"
+    command: bash -c "echo $(pwd)"
     environment:
-      - BURP_START_URL=http://localhost:8080
-      - BURP_REPORT_FILE_PATH=/dastardly/dastardly-report.xml
+      - DASTARDLY_START_URL=http://localhost:8080
+      - DASTARDLY_REPORT_FILE_PATH=/dastardly/dastardly-report.xml
       - user=root
     volumes: 
       - .:/dastardly
