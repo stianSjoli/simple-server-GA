@@ -10,7 +10,7 @@ services:
       - BURP_REPORT_FILE_PATH=/dastardly/dastardly-report.xml
       - user=root
     volumes: 
-      - $(pwd):/dastardly
+      - .:/dastardly
     depends_on:
       - web
 
