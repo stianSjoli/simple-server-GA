@@ -5,7 +5,7 @@ services:
       - "8000:5000"
   scan:
     image: "public.ecr.aws/portswigger/dastardly:latest"
-    command: bash -c echo $(pwd)
+    command: bash -c "echo $(pwd)"
     environment:
       - DASTARDLY_START_URL=http://localhost:8080
       - DASTARDLY_REPORT_FILE_PATH=/dastardly/dastardly-report.xml
