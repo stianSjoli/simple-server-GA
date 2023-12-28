@@ -6,8 +6,7 @@ services:
   scan:
     image: "public.ecr.aws/portswigger/dastardly:latest"
     command: 
-      - cd dastardly
-      - ls -la  
+      - cd dastardly && ls -la 
     environment:
       - DASTARDLY_START_URL=http://localhost:8080
       - DASTARDLY_REPORT_FILE_PATH=/dastardly/dastardly-report.xml
