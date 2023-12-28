@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:5000"
+  scan:
+    image: "public.ecr.aws/portswigger/dastardly:latest"
+    environment:
+      - BURP_START_URL=http://localhost:8080
+      - BURP_REPORT_FILE_PATH=/dastardly/dastardly-report.xml
+      
