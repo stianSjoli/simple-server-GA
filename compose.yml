@@ -8,4 +8,11 @@ services:
     environment:
       - BURP_START_URL=http://localhost:8080
       - BURP_REPORT_FILE_PATH=/dastardly/dastardly-report.xml
+      - user=root
+    volumes: 
+      - $(pwd):/dastardly"
+    depends_on:
+      - web
       
+
+ 

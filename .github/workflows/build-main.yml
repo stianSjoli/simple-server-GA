@@ -5,6 +5,11 @@ on:
     branches: [ "main" ]
 
 jobs:
+  dastardly-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: docker-compose -f compose.yml up --abort-on-container-exit --exit-code-from scan 
   build:
     runs-on: ubuntu-latest
     steps:
