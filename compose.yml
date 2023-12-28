@@ -2,15 +2,12 @@ services:
   web:
     build: .
     ports:
-      - "8000:5000"
+      - "8080:8080"
   scan:
-    image: "public.ecr.aws/portswigger/dastardly:latest"
-    command: 
-      - /bin/bash
-      - cd dastardly && ls -la 
+    image: "public.ecr.aws/portswigger/dastardly:latest" 
     environment:
-      - DASTARDLY_START_URL=http://localhost:8080
-      - DASTARDLY_REPORT_FILE_PATH=/dastardly/dastardly-report.xml
+      - BURP_START_URL=http://web:8080
+      - BURP_REPORT_FILE_PATH=/dastardly/dastardly-report.xml
       - user=root
     volumes: 
       - .:/dastardly
