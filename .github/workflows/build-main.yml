@@ -12,6 +12,7 @@ jobs:
       - run: | 
           docker-compose -f compose.yml up --abort-on-container-exit --exit-code-from scan
           ls -la
+          cd .. && ls -la 
       - name: Archive scan results 
         uses: actions/upload-artifact@v3
         with:
