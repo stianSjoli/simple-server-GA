@@ -2,7 +2,7 @@ services:
   web:
     build: .
     ports:
-      - "8080:8080"
+      - "8080"
   scan:
     image: "public.ecr.aws/portswigger/dastardly:latest" 
     environment:
@@ -10,7 +10,7 @@ services:
       - BURP_REPORT_FILE_PATH=dastardly-report.xml
       - user=root
     volumes: 
-      - .:/dastardly
+      - .:/
     depends_on:
       - web
 
