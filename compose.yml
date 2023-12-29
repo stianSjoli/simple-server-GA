@@ -7,10 +7,10 @@ services:
     image: "public.ecr.aws/portswigger/dastardly:latest" 
     environment:
       - BURP_START_URL=http://web:8080
-      - BURP_REPORT_FILE_PATH=dastardly-report.xml
+      - BURP_REPORT_FILE_PATH=/dastardly/dastardly-report.xml
       - user=root
     volumes: 
-      - .:/
+      - .:/dastardly
     depends_on:
       - web
 
