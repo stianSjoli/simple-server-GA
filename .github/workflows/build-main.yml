@@ -11,12 +11,12 @@ jobs:
       - uses: actions/checkout@v3
       - run: | 
           docker-compose -f compose.yml up --abort-on-container-exit --exit-code-from scan
-          ls -la 
+          ls -la
       - name: Archive scan results 
         uses: actions/upload-artifact@v3
         with:
           name: dastardly-report
-          path: dastardly-report.xml
+          path: /dastardly/dastardly-report.xml
 
   build:
     runs-on: ubuntu-latest

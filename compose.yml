@@ -9,6 +9,7 @@ services:
       - BURP_START_URL=http://web:8080
       - BURP_REPORT_FILE_PATH=dastardly-report.xml
       - user=root
+    working_dir: /dastardly
     volumes: 
       - .:/dastardly
     depends_on:
