@@ -9,7 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: docker-compose -f compose.yml up --abort-on-container-exit --exit-code-from scan
+      - run: | 
+        docker-compose -f compose.yml up --abort-on-container-exit --exit-code-from scan
+        mv dastardly-report.xml /dastardly/dastardly-report.xml
       - name: Archive scan results 
         uses: actions/upload-artifact@v3
         with:
