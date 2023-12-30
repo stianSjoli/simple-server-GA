@@ -1,4 +1,6 @@
-# simple-server-GA [![build-main](https://github.com/stianSjoli/simple-server-GA/actions/workflows/build-main.yml/badge.svg)](https://github.com/stianSjoli/simple-server-GA/actions/workflows/build-main.yml)
+# simple-server-GA 
+[![build-main](https://github.com/stianSjoli/simple-server-GA/actions/workflows/build-main.yml/badge.svg)](https://github.com/stianSjoli/simple-server-GA/actions/workflows/build-main.yml)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/stianSjoli/simple-server-GA/badge)](https://securityscorecards.dev/viewer/?uri=github.com/{owner}/{repo})
 
 
 
