@@ -4,4 +4,10 @@
 
 
 
-A repository with a simple application, a server, to experiment with cyber security. A github action workflow following SLSA, using cosign to push signed images to dockerhub.    
+A repository with a simple application, a server, to experiment with "blue team" cyber security tools and practices. 
+
+## SLSA
+A github action workflow following SLSA, using cosign to push signed images to dockerhub.
+
+## openSSF scorecard
+openssf scan is included to analysis best practices. More about what the analysis focuses on, can be found here [![OpenSSF scorecard]](https://securityscorecards.dev/#the-checks).
