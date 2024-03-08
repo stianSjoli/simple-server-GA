@@ -13,4 +13,4 @@ A github action workflow following SLSA, using cosign to push signed images to d
 openssf scan is included to analysis best practices. More about what the analysis focuses on, can be found here [OpenSSF scorecard](https://securityscorecards.dev/#the-checks).
 
 ## DAST
-Dastardly from burp is added to the workflow [Dastardly](https://portswigger.net/burp/dastardly). 
+Owasp zap is added to the workflow.
