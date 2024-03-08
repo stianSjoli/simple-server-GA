@@ -13,4 +13,4 @@ A github action workflow following SLSA, using cosign to push signed images to d
 openssf scan is included to analysis best practices. More about what the analysis focuses on, can be found here [OpenSSF scorecard](https://securityscorecards.dev/#the-checks).
 
 ## DAST
-Owasp zap is added to the workflow.
+Owasp zap is used to scan the application, run with docker-compose. The scan image is dependent on the web application, within the compose file, and docker-compose is waiting for the exit-signal from the scan.   
