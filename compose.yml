@@ -4,12 +4,9 @@ services:
     ports:
       - "8080"
   scan:
-    build: ./dastardly
+    image: 'ghcr.io/zaproxy/zaproxy:stable'
     environment:
-      - BURP_START_URL=http://web:8080
-      - user=root
-    volumes: 
-      - .:/usr/local/burpsuite_enterprise/dastardly2
+      - target=http://web:8080
     depends_on:
       - web
 
