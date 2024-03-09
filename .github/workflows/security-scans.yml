@@ -1,7 +1,5 @@
 name: security:scan
-on:
-  push:
-    branches: [ "main" ]
+on: [pull_request]
     
 # Declare default permissions as read only.
 permissions: read-all
