@@ -5,7 +5,7 @@ services:
       - "8080"
   scan:
     image: 'ghcr.io/zaproxy/zaproxy:stable'
-    command: zap-full-scan.py -t http://web:8080
+    command: zap-full-scan.py -I -t http://web:8080
     depends_on:
       - web
 
