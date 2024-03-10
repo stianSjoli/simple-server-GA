@@ -1,7 +1,7 @@
 # simple-server-GA 
 [![build-main](https://github.com/stianSjoli/simple-server-GA/actions/workflows/build-main.yml/badge.svg)](https://github.com/stianSjoli/simple-server-GA/actions/workflows/build-main.yml)
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/stianSjoli/simple-server-GA/badge)](https://securityscorecards.dev/viewer/?uri=github.com/{owner}/{repo})
-[![build-main](https://github.com/stianSjoli/simple-server-GA/actions/workflows/security-scans.yml/badge.svg)](https://github.com/stianSjoli/simple-server-GA/actions/workflows/security-scans.yml)
+[![security-scan:pr](https://github.com/stianSjoli/simple-server-GA/actions/workflows/security-scans.yml/badge.svg)](https://github.com/stianSjoli/simple-server-GA/actions/workflows/security-scans.yml)
 
 
 A repository with a simple application, a server, to experiment with "blue team" cyber security tools and practices. 
