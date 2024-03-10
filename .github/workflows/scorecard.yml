@@ -11,9 +11,7 @@ on:
   # https://github.com/ossf/scorecard/blob/main/docs/checks.md#maintained
   schedule:
     - cron: '23 1 * * 1'
-  push:
-    branches: [ "main" ]
-
+  
 # Declare default permissions as read only.
 permissions: read-all
 
