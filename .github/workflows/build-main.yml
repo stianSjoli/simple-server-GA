@@ -19,8 +19,12 @@ jobs:
       - name: Build image
         run: |
           docker build . -t pasient0/simple-server:${{ github.sha }}-signed
-      - name: print sbom
-        run: docker sbom pasient0/simple-server:${{ github.sha }}-signed
+      - uses: anchore/sbom-action@v0
+        name: sbom
+        with:
+          image: pasient0/simple-server:${{ github.sha }}-signed
+          upload-artifact: true
+          upload-artifact-retention: 1
       - uses: sigstore/cosign-installer@main
       - name: Write signing key to disk
         run: 'echo "$KEY" > cosign.key'
