@@ -29,3 +29,8 @@ jobs:
         run: cosign sign --key cosign.key pasient0/simple-server@$(docker images --no-trunc --quiet pasient0/simple-server) -y
       - name: push image
         run: docker push pasient0/simple-server:${{ github.sha }}-signed
+      - uses: anchore/sbom-action@v0
+        with:
+          image: pasient0/simple-server:${{ github.sha }}-signed
+          registry-username: pasient0
+          registry-password: ${{ secrets.DOCKERHUB_TOKEN }}
