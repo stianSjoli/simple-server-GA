@@ -11,7 +11,7 @@ WORKDIR src/
 
 RUN npm ci --legacy-peer-deps 
 RUN npm run build
-FROM nginx:1.25.4-alpine
+FROM nginx:1.26.0-alpine
 COPY nginx.conf /etc/nginx/nginx.conf
 RUN  apk update && apk add apparmor
 USER 0
