@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/stianSjoli/simple-server#readme",
   "devDependencies": {
-    "jest": "^26.4.2",
+    "jest": "^29.7.0",
     "jest-junit": "^11.1.0",
     "webpack": "^5.75.0",
     "webpack-cli": "5.0.1",
